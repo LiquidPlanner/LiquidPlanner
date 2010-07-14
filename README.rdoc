@@ -1,0 +1,24 @@
+= LiquidPlanner
+The LiquidPlanner gem provides a simple way to access LiquidPlanner's API.
+
+To get started, look at the examples directory.  They show how to perform
+some common tasks.
+
+Typically you will want to create an API object:
+  
+  lp = LiquidPlanner::Base.new(:email=>email, :password=>password)
+  
+With the +api+ you can then get the user's account or their workspaces:
+
+  account     = lp.account
+  workspaces  = lp.workspaces
+  
+Tasks can be listed and created by accessing a workspace:
+
+  workspace = lp.workspaces(7)                                # access a workspace by ID
+  tasks     = workspace.tasks                                 # list all the tasks
+  my_tasks  = workspace.tasks(:all, :filter=>'owner_id = me') # use a filter
+  new_task  = workspace.create_task(:name=>'Learn API')       # create and save a new task
+  
+For more information, visit the LiquidPlanner developer pages at
+http://www.liquidplanner.com/developers

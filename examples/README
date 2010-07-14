@@ -1,0 +1,14 @@
+All of the examples expect you to pass in your account name and workspace id, 
+for instance:
+
+  ruby examples/list_tasks.rb alice@example.com 7
+  
+If you set the VERBOSE environment variable, the examples will print out their
+http requests to the console:
+
+  ruby examples/list_tasks.rb alice@example.com 7 --verbose
+  
+These examples all use highline library for prompting the user.  Install the 
+gem with:
+
+  sudo gem install highline
