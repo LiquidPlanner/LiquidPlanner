@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brett Bender", "Adam Sanderson"]
-  s.date = %q{2010-06-03}
+  s.date = %q{2010-09-02}
   s.description = %q{LiquidPlanner API client, using ActiveResource}
   s.email = %q{api@liquidplanner.com}
   s.extra_rdoc_files = [
@@ -59,24 +59,33 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/liquidplanner/liquidplanner}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{LiquidPlanner API client}
+  s.test_files = [
+    "examples/create_task.rb",
+     "examples/list_tasks.rb",
+     "examples/support/helper.rb",
+     "examples/track_time.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activeresource>, ["~> 3.0.0"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<activeresource>, ["~> 3.0.0", ">= 3.0.0"])
+      s.add_runtime_dependency(%q<activesupport>, ["~> 3.0.0", ">= 3.0.0"])
       s.add_runtime_dependency(%q<multipart-post>, [">= 1.0.1"])
       s.add_development_dependency(%q<highline>, [">= 1.5"])
     else
-      s.add_dependency(%q<activeresource>, ["~> 3.0.0"])
+      s.add_dependency(%q<activeresource>, ["~> 3.0.0", ">= 3.0.0"])
+      s.add_dependency(%q<activesupport>, ["~> 3.0.0", ">= 3.0.0"])
       s.add_dependency(%q<multipart-post>, [">= 1.0.1"])
       s.add_dependency(%q<highline>, [">= 1.5"])
     end
   else
-    s.add_dependency(%q<activeresource>, ["~> 3.0.0"])
+    s.add_dependency(%q<activeresource>, ["~> 3.0.0", ">= 3.0.0"])
+    s.add_dependency(%q<activesupport>, ["~> 3.0.0", ">= 3.0.0"])
     s.add_dependency(%q<multipart-post>, [">= 1.0.1"])
     s.add_dependency(%q<highline>, [">= 1.5"])
   end
