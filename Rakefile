@@ -24,6 +24,9 @@ begin
 
     # For the examples:
     gemspec.add_development_dependency  'highline',         '>= 1.5'
+
+    # For the tests:
+    gemspec.test_files = FileList["test/**/*_test.rb"]
     gemspec.add_development_dependency  'mocha',            '= 0.9.8'
   end
 rescue LoadError
@@ -34,4 +37,10 @@ Rake::RDocTask.new do |t|
   t.main = "README.rdoc"
   t.rdoc_files.include("README.rdoc")
   t.rdoc_files.include("lib/**/*.rb")
+end
+
+Rake::TestTask.new do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = false
 end
