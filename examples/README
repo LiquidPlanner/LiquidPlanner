@@ -1,14 +1,27 @@
-All of the examples expect you to pass in your account name and workspace id, 
+Command Line Examples:
+======================
+
+Files: create_task.rb, list_tasks.rb, track_time.rb
+
+All of these examples expect you to pass in your account name and workspace id, 
 for instance:
 
-  ruby examples/list_tasks.rb alice@example.com 7
+    ruby examples/list_tasks.rb alice@example.com 7
   
 If you set the VERBOSE environment variable, the examples will print out their
 http requests to the console:
 
-  ruby examples/list_tasks.rb alice@example.com 7 --verbose
+    ruby examples/list_tasks.rb alice@example.com 7 --verbose
   
 These examples all use highline library for prompting the user.  Install the 
 gem with:
 
-  sudo gem install highline
+    sudo gem install highline
+
+Source Control Management Examples:
+===================================
+
+Files: post-commit.rb, svn-post-commit.sh
+
+This is a working example of integrating LiquidPlanner with SVN. See 
+post-commit.rb for more information.
