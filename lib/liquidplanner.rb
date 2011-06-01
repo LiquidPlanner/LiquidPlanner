@@ -2,9 +2,8 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 module LiquidPlanner
-  VERSION      = "0.0.2"
-# API_BASE_URL = "https://app.liquidplanner.com/api"
-  API_BASE_URL = "http://localhost:3000/api"
+  VERSION      = "0.0.3"
+  API_BASE_URL = "https://app.liquidplanner.com/api"
 end
 
 require "rubygems"

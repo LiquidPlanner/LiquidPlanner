@@ -5,3 +5,7 @@
 0.0.2
 -----
 * Ensure non beta ActiveResource libraries are used
+
+0.0.3
+-----
+* Updated for LiquidPlanner 3.0
