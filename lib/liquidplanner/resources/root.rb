@@ -1,7 +1,6 @@
 module LiquidPlanner
   module Resources
-    class Container < Treeitem
-      include Movable
+    class Root < Container
     end
   end
 end

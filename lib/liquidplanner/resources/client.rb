@@ -1,7 +1,6 @@
 module LiquidPlanner
   module Resources
-    class Client < Container
-      include Order
+    class Client < Treeitem
     end
   end
 end

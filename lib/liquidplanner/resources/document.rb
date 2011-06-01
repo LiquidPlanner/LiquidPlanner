@@ -29,10 +29,6 @@ module LiquidPlanner
         end
       end
 
-      def get_raw(custom_method_name, options = {})
-        connection.get_raw(custom_method_element_url(custom_method_name, options), self.class.headers)
-      end
-
       def download
         get_raw(:download)
       end

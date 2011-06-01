@@ -1,7 +1,6 @@
 module LiquidPlanner
   module Resources
-    class Project < Item
-      include Order
+    class Project < Container
     end
   end
 end

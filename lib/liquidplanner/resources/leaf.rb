@@ -4,9 +4,9 @@
 
 module LiquidPlanner
   module Resources
-    class Leaf < Item
-      include Priority
-      include Order
+    class Leaf < Treeitem
+      include Movable
+      include Packageable
 
       TRACK_TIME_KEYS = [ :work, :activity_id, :member_id, :low, :high, :is_done, :done_on, :work_performed_on, :comment ].freeze
       def track_time( options={} )

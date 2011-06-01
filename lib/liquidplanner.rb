@@ -3,7 +3,8 @@ $:.unshift(File.dirname(__FILE__)) unless
 
 module LiquidPlanner
   VERSION      = "0.0.2"
-  API_BASE_URL = "https://app.liquidplanner.com/api"
+# API_BASE_URL = "https://app.liquidplanner.com/api"
+  API_BASE_URL = "http://localhost:3000/api"
 end
 
 require "rubygems"
@@ -20,17 +21,18 @@ require "liquidplanner/resources/account"
 require "liquidplanner/resources/member"
 require "liquidplanner/resources/workspace"
 
-require "liquidplanner/resources/relative_resource"
-require "liquidplanner/resources/priority"
-require "liquidplanner/resources/order"
+require "liquidplanner/resources/move_or_package"
+require "liquidplanner/resources/movable"
+require "liquidplanner/resources/packageable"
 
-require "liquidplanner/resources/item"
+require "liquidplanner/resources/treeitem"
 require "liquidplanner/resources/container"
 require "liquidplanner/resources/leaf"
+require "liquidplanner/resources/root"
 require "liquidplanner/resources/task"
 require "liquidplanner/resources/event"
 require "liquidplanner/resources/milestone"
-require "liquidplanner/resources/tasklist"
+require "liquidplanner/resources/package"
 require "liquidplanner/resources/folder"
 require "liquidplanner/resources/project"
 require "liquidplanner/resources/client"

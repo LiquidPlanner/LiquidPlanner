@@ -13,6 +13,10 @@ module LiquidPlanner
       @prefix_options.merge!(initial_prefix_options){|k, old_attr,new_attr| old_attr || new_attr }
       self
     end
+
+    def get_raw(custom_method_name, options = {})
+      connection.get_raw(custom_method_element_url(custom_method_name, options), self.class.headers)
+    end
     
     private
     # Override the default instantiate_record to support polymorphic types
@@ -41,7 +45,7 @@ module LiquidPlanner
     #   workspace.create_task(:name=>'new task').create_estimate(:low_effort=>1, :high_effort=>3)
     def method_missing(name, *args)
       if name.to_s =~ /^(create|build)_(.+)/
-        operation    = $1.to_sym
+        operation   = $1.to_sym
         resource    = $2
         attributes  = args.shift || {}
         klass = LiquidPlanner::Resources.const_get(resource.classify)

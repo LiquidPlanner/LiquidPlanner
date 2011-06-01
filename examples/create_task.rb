@@ -13,6 +13,11 @@ email, password, space_id = get_credentials!
 lp = LiquidPlanner::Base.new(:email=>email, :password=>password)
 workspace = lp.workspaces(space_id)
 
+unless parent = workspace.packages(:first) || workspace.projects(:first)
+  say "There are no packages or projects in this workspace; cannot add a task."
+  exit
+end
+
 # Ask for a task's name and estimate
 say "Add a new task to '#{workspace.name}'"
 name  = ask("New task name")
@@ -21,7 +26,7 @@ high  = ask("Max effort", Float){|q| q.above = low}
 
 # Submit the task and estimate
 say "Submitting: '#{name}' [#{low} - #{high}] to LiquidPlanner"
-task = workspace.create_task(:name=>name)
+task = workspace.create_task(:name=>name, :parent_id => parent.id)
 task.create_estimate(:low=>low, :high=>high)
 
 # All done

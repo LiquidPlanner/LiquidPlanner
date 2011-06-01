@@ -1,7 +1,7 @@
 module LiquidPlanner
   module Resources
-    class Tasklist < Container
-      include Priority
+    class Package < Container
+      include Movable
     end
   end
 end

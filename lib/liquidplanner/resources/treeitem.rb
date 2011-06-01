@@ -3,16 +3,24 @@
 #------------------------------------------------------------------------
 module LiquidPlanner
   module Resources
-    class Item < LiquidPlanner::LiquidPlannerResource
+    class Treeitem < LiquidPlanner::LiquidPlannerResource
 
       self.prefix = "/api/workspaces/:workspace_id/"
 
-      def folder
-        Folder.find( :one, :from => "/api/workspaces/#{workspace_id}/folders/#{folder_id}" )
+      def parent
+        parent_id && Treeitem.find( :one, :from => "/api/workspaces/#{workspace_id}/treeitems/#{parent_id}" )
       end
 
-      def tasklist
-        Tasklist.find( :one, :from => "/api/workspaces/#{workspace_id}/tasklists/#{tasklist_id}" )
+      def package
+        package_id && Package.find( :one, :from => "/api/workspaces/#{workspace_id}/packages/#{package_id}" )
+      end
+
+      def project
+        project_id && Project.find( :one, :from => "/api/workspaces/#{workspace_id}/projects/#{project_id}" )
+      end
+
+      def client
+        client_id && Client.find( :one, :from => "/api/workspaces/#{workspace_id}/clients/#{client_id}" )
       end
 
       def note
