@@ -28,7 +28,11 @@ module LiquidPlanner
           n.prefix_options = luggage_params
         end
       end
-
+      
+      def activities( scope=:all )
+        Activity.find( scope, :params => luggage_params )
+      end
+      
       def comments( scope=:all )
         Comment.find( scope, :params => luggage_params )
       end

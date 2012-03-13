@@ -1,7 +1,6 @@
 #------------------------------------------------------------------------
 # leaves
 #------------------------------------------------------------------------
-
 module LiquidPlanner
   module Resources
     class Leaf < Treeitem
@@ -12,7 +11,12 @@ module LiquidPlanner
       def track_time( options={} )
         options.assert_valid_keys( *TRACK_TIME_KEYS )
         request_body = options.to_json
-        response = post(:track_time, {}, request_body)
+        # ActiveResource post() by default:
+        #   response = post(:track_time, {}, request_body) 
+        # will set this route with 'new': /api/workspaces/36/tasks/new/activities.json
+        # it's because of how it sets @persisted = true by default, calling custom_method_new_element_url()
+        # what we want is: /api/workspaces/36/tasks/:id/activities.json, which is accomplished here:
+        response = connection.post(custom_method_element_url(:track_time, options), request_body)
         load( self.class.format.decode( response.body ) )
       end
 
