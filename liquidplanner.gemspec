@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{liquidplanner}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Brett Bender", "Adam Sanderson"]
-  s.date = %q{2010-09-02}
+  s.date = %q{2012-03-14}
   s.description = %q{LiquidPlanner API client, using ActiveResource}
   s.email = %q{api@liquidplanner.com}
   s.extra_rdoc_files = [
