@@ -31,6 +31,7 @@ module LiquidPlanner
       LiquidPlannerResource.site     = @api_base_url
       LiquidPlannerResource.user     = @email
       LiquidPlannerResource.password = @password
+      LiquidPlannerResource.connection.enable_gzip
     end
                 
   end
