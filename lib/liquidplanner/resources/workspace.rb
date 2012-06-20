@@ -37,6 +37,10 @@ module LiquidPlanner
       def folders( scope=:all, options={} )
         Folder.find( scope, :params => { :workspace_id => self.id, :flat => true }.merge(options) )
       end
+      
+      def custom_fields( scope=:all, options={} )
+        CustomField.find( scope, :params => { :workspace_id => self.id}.merge(options) )
+      end
             
       protected
 
