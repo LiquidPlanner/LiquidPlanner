@@ -3,9 +3,7 @@
 #------------------------------------------------------------------------
 module LiquidPlanner
   module Resources
-    class Treeitem < LiquidPlanner::LiquidPlannerResource
-
-      self.prefix = "/api/workspaces/:workspace_id/"
+    class Treeitem < WorkspaceResource 
 
       def parent
         parent_id && Treeitem.find( :one, :from => "/api/workspaces/#{workspace_id}/treeitems/#{parent_id}" )

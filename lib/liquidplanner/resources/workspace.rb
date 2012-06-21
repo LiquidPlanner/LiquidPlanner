@@ -39,7 +39,7 @@ module LiquidPlanner
       end
       
       def custom_fields( scope=:all, options={} )
-        CustomField.find( scope, :params => { :workspace_id => self.id}.merge(options) )
+        CustomField.find( scope, :params => { :workspace_id => self.id }.merge(options) )
       end
             
       protected

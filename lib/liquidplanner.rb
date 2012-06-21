@@ -16,6 +16,8 @@ require "net/http/post/multipart" # for uploading documents
 # could also glob these paths and require all matches...
 require "liquidplanner/base"
 require "liquidplanner/liquidplanner_resource"
+require "liquidplanner/resources/workspace_resource"
+
 require "liquidplanner/resources/account"
 require "liquidplanner/resources/member"
 require "liquidplanner/resources/workspace"

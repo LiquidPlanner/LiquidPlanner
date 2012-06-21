@@ -1,6 +1,6 @@
 module LiquidPlanner
   module Resources
-    class CustomField < Luggage
+    class CustomField < WorkspaceResource
     end
   end
 end

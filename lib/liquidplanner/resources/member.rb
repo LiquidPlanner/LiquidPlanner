@@ -1,7 +1,6 @@
 module LiquidPlanner
   module Resources
-    class Member < LiquidPlanner::LiquidPlannerResource
-      self.prefix = "/api/workspaces/:workspace_id/"
+    class Member < WorkspaceResource 
       def avatar
         get_raw(:avatar)
       end
