@@ -1,7 +1,7 @@
 Command Line Examples:
 ======================
 
-Files: create_task.rb, list_tasks.rb, track_time.rb
+Files: create_task.rb, list_tasks.rb, track_time.rb, list_custom_fields.rb, update_custom_field_value.rb
 
 All of these examples expect you to pass in your account name and workspace id, 
 for instance:
