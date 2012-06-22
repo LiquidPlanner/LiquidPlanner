@@ -2,7 +2,7 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 module LiquidPlanner
-  VERSION      = "0.0.3"
+  VERSION      = "0.0.4"
   API_BASE_URL = "https://app.liquidplanner.com/api"
 end
 

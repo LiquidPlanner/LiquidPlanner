@@ -14,7 +14,7 @@ begin
     gemspec.description = "LiquidPlanner API client, using ActiveResource"
     gemspec.email       = "api@liquidplanner.com"
     gemspec.homepage    = "http://github.com/liquidplanner/liquidplanner"
-    gemspec.authors     = ["Brett Bender", "Adam Sanderson"]
+    gemspec.authors     = ["Brett Bender", "Adam Sanderson", "Mark Holton"]
     
     gemspec.files       = FileList["[A-Z]*", "{examples,lib,test}/**/*"]
     
