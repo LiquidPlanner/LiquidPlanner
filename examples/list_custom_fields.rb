@@ -1,17 +1,17 @@
 # Require the LiquidPlanner API.
-require File.dirname(__FILE__) + '/../lib/liquidplanner'
+require File.expand_path("../lib/liquidplanner", File.dirname(__FILE__))
 
 # Require support libraries used by this example.
-require 'rubygems'                  
-require 'highline/import'           
-require 'active_support/all'        
-require File.dirname(__FILE__) + '/support/helper'
+require 'rubygems'
+require 'highline/import'
+require File.expand_path("./support/helper", File.dirname(__FILE__))
+
 
 # List a set of custom fields and custom field values in a workspace.
 #
 # You will:
 # * Access a workspace
-# * display the custom Project and custom Task fields in that workspace
+# * Display the custom Project and custom Task fields in that workspace
 #
 # This example will use the highline library to handle input and output.
 # You can install it with:

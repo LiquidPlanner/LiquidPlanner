@@ -1,10 +1,21 @@
 # Require the LiquidPlanner API.
-require File.dirname(__FILE__) + '/../lib/liquidplanner'
+require File.expand_path("../lib/liquidplanner", File.dirname(__FILE__))
 
 # Require support libraries used by this example.
-require 'rubygems'                  
+require 'rubygems'
 require 'highline/import'
-require File.dirname(__FILE__) + '/support/helper'
+require File.expand_path("./support/helper", File.dirname(__FILE__))
+
+# Track time against a task in a workspace.
+#
+# You will:
+# * Access a workspace
+# * Filter available tasks
+# * Log time to an existing active task
+#
+# This example will use the highline library to handle input and output.
+# You can install it with:
+#     gem install highline
 
 # Get the user's credentials
 email, password, space_id = get_credentials!
@@ -20,10 +31,10 @@ say workspace.name
 say "-" * 40
 
 # Get the user's tasks
-tasks = workspace.tasks(:all, :filter=>'owner_id = me', :include_associated=>'activities')
+tasks = workspace.tasks(:all, :filter=>['owner_id = me', 'is_done is false'], :include_associated=>'activities')
 
 if tasks.empty?
-  say "No tasks are assigned to you."
+  say "No active tasks are assigned to you."
   exit
 end
 

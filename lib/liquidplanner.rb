@@ -1,14 +1,9 @@
-$:.unshift(File.dirname(__FILE__)) unless
-  $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
+$:.push File.expand_path(".", File.dirname(__FILE__))
 
 module LiquidPlanner
-  VERSION      = "0.0.4"
+  VERSION      = "0.0.5"
   API_BASE_URL = "https://app.liquidplanner.com/api"
 end
-
-require "rubygems"
-gem "activeresource", '~> 3.0'
-gem "multipart-post"
 
 require "active_resource"
 require "net/http/post/multipart" # for uploading documents
@@ -30,6 +25,7 @@ require "liquidplanner/resources/treeitem"
 require "liquidplanner/resources/container"
 require "liquidplanner/resources/leaf"
 require "liquidplanner/resources/root"
+require "liquidplanner/resources/inbox"
 require "liquidplanner/resources/task"
 require "liquidplanner/resources/event"
 require "liquidplanner/resources/milestone"

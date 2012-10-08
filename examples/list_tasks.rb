@@ -1,11 +1,9 @@
 # Require the LiquidPlanner API.
-require File.dirname(__FILE__) + '/../lib/liquidplanner'
+require File.expand_path("../lib/liquidplanner", File.dirname(__FILE__))
 
 # Require support libraries used by this example.
-require 'rubygems'                  
-require 'highline/import'           
-require 'active_support/all'        
-require File.dirname(__FILE__) + '/support/helper'
+require 'highline/import'
+require File.expand_path("./support/helper", File.dirname(__FILE__))
 
 # List a set of tasks in a workspace.
 #
@@ -57,6 +55,6 @@ tasks.each do |task|
   end
   
   # Print the description
-  say task.description
+  say "#{task.description}\n"
   say "-" * 40
 end

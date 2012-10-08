@@ -1,10 +1,11 @@
 # Require the LiquidPlanner API.
-require File.dirname(__FILE__) + '/../lib/liquidplanner'
+require File.expand_path("../lib/liquidplanner", File.dirname(__FILE__))
 
 # Require support libraries used by this example.
-require 'rubygems'                  
+require 'rubygems'
 require 'highline/import'
-require File.dirname(__FILE__) + '/support/helper'
+require File.expand_path("./support/helper", File.dirname(__FILE__))
+
 
 require 'pp'
 # Get the user's credentials
