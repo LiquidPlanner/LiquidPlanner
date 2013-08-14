@@ -43,6 +43,7 @@ require "liquidplanner/resources/estimate"
 require "liquidplanner/resources/snapshot"
 require "liquidplanner/resources/activity"
 require "liquidplanner/resources/custom_field"
+require "liquidplanner/resources/custom_field_values"
 
 require "liquidplanner/ext/hash"
 require "liquidplanner/ext/connection"

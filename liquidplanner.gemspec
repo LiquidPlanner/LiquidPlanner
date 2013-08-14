@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = "liquidplanner"
-  s.version     = "0.0.5"
-  s.authors     = ["Brett Bender", "Adam Sanderson", "Mark Holton"]
+  s.version     = "0.0.6"
+  s.authors     = ["Brett Bender", "Adam Sanderson", "Mark Holton", "Jon Snelling"]
   s.email       = ["api@liquidplanner.com"]
   s.homepage    = "http://github.com/liquidplanner/liquidplanner"
   s.summary     = "LiquidPlanner API client"
