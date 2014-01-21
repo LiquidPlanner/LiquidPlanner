@@ -21,4 +21,4 @@ Tasks can be listed and created by accessing a workspace:
   new_task  = workspace.create_task(:name=>'Learn API')       # create and save a new task
   
 For more information, visit the LiquidPlanner developer pages at
-http://www.liquidplanner.com/developers
+http://www.liquidplanner.com/support/articles/developer-tools/
