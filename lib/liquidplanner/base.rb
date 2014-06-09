@@ -18,11 +18,11 @@ module LiquidPlanner
     end
 
     def account
-      LiquidPlanner::Resources::Account.find(:one, :from => "/api/account")
+      LiquidPlanner::Resources::Account.find( :one, :from => "/api/account" )
     end
 
     def workspaces( scope=:all )
-      LiquidPlanner::Resources::Workspace.find(scope)
+      LiquidPlanner::Resources::Workspace.find( scope )
     end
 
     private

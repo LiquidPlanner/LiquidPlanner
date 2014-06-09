@@ -1,7 +1,7 @@
 $:.push File.expand_path(".", File.dirname(__FILE__))
 
 module LiquidPlanner
-  VERSION      = "0.0.5"
+  VERSION      = "0.0.7"
   API_BASE_URL = "https://app.liquidplanner.com/api"
 end
 
@@ -33,6 +33,7 @@ require "liquidplanner/resources/package"
 require "liquidplanner/resources/folder"
 require "liquidplanner/resources/project"
 require "liquidplanner/resources/client"
+require "liquidplanner/resources/timesheet_entry"
 
 require "liquidplanner/resources/luggage"
 require "liquidplanner/resources/note"

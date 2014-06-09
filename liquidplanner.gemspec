@@ -1,6 +1,8 @@
+require './lib/liquidplanner'
+
 Gem::Specification.new do |s|
   s.name        = "liquidplanner"
-  s.version     = "0.0.6"
+  s.version     = LiquidPlanner::VERSION
   s.authors     = ["Brett Bender", "Adam Sanderson", "Mark Holton", "Jon Snelling"]
   s.email       = ["api@liquidplanner.com"]
   s.homepage    = "http://github.com/liquidplanner/liquidplanner"
@@ -15,5 +17,4 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'multipart-post',   '~> 1.0.1', '>= 1.0.1'
   
   s.add_development_dependency 'highline',     '>= 1.5'
-  s.add_development_dependency 'mocha',        '= 0.9.8'
 end
