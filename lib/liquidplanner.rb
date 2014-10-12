@@ -1,7 +1,7 @@
 $:.push File.expand_path(".", File.dirname(__FILE__))
 
 module LiquidPlanner
-  VERSION      = "0.0.7"
+  VERSION      = "0.0.10"
   API_BASE_URL = "https://app.liquidplanner.com/api"
 end
 
@@ -28,6 +28,7 @@ require "liquidplanner/resources/root"
 require "liquidplanner/resources/inbox"
 require "liquidplanner/resources/task"
 require "liquidplanner/resources/event"
+require "liquidplanner/resources/partial_day_event"
 require "liquidplanner/resources/milestone"
 require "liquidplanner/resources/package"
 require "liquidplanner/resources/folder"
@@ -45,6 +46,7 @@ require "liquidplanner/resources/snapshot"
 require "liquidplanner/resources/activity"
 require "liquidplanner/resources/custom_field"
 require "liquidplanner/resources/custom_field_values"
+require "liquidplanner/resources/checklist_item"
 
 require "liquidplanner/ext/hash"
 require "liquidplanner/ext/connection"

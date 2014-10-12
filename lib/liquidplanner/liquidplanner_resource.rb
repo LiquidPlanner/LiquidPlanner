@@ -7,7 +7,7 @@ module LiquidPlanner
     
     # LiquidPlanner does not send back data that is already in the path (prefix_options), so merge
     # any values that the object already had back into the prefix_options.
-    def load(attributes, remove_root = false)
+    def load(attributes, remove_root = false, persisted = false)
       initial_prefix_options = @prefix_options.clone
       super
       @prefix_options.merge!(initial_prefix_options){|k, old_attr,new_attr| old_attr || new_attr }

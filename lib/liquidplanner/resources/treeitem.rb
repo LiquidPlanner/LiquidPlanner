@@ -49,6 +49,10 @@ module LiquidPlanner
         Link.find( scope, :params => luggage_params )
       end
 
+      def checklist_items( scope=:all )
+        ChecklistItem.find( scope, :params => luggage_params )
+      end
+
       def estimates( scope=:all )
         Estimate.find( scope, :params => luggage_params )
       end
