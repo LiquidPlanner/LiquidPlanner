@@ -74,7 +74,7 @@ end
 ### Custom Fields
 
 ``` ruby
-workspace     = lp.workspaces(7)                        # Access workspace by ID
+workspace = lp.workspaces(7)                            # Access workspace by ID
 
 # List custom fields
 #
@@ -93,8 +93,9 @@ end
 
 # Update a custom field value
 #
-custom_field = workspace.custom_fields(:first)          # Access the first custom field
-task = workspace.tasks(:first)                          # Access the first task
+custom_field = workspace.custom_fields(:first) # Access the first custom field
+task = workspace.tasks(:first)                 # Access the first task
+
 task.custom_field_values = { custom_field.name => custom_field.values.first }
 task.save
 ```
@@ -102,16 +103,16 @@ task.save
 ### Time Tracking
 
 ``` ruby
-workspace = lp.workspaces(7)                      # Access workspace by ID
+workspace = lp.workspaces(7)                # Access workspace by ID
 
-task = workspace.tasks(                           # Get my first unfinished task
+task = workspace.tasks(                     # Get my first unfinished task
   :first, 
   :filter => ['owner_id = me', 'is_done is false']
 ) 
 
 task.track_time(
-  :work            => 4,                          # Log 4 hours of work 
-  :activity_id     => task.activities.first.id
+  :work        => 4,                        # Log 4 hours of work 
+  :activity_id => task.activities.first.id
 )
 ```
 
