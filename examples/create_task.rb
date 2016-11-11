@@ -21,6 +21,8 @@ email, password, space_id = get_credentials!
 
 # Connect to LiquidPlanner and get the workspace
 lp = LiquidPlanner::Base.new(:email=>email, :password=>password)
+
+account   = lp.account
 workspace = lp.workspaces(space_id)
 
 # Pick the first container in the workspace to place the task in:
@@ -35,7 +37,7 @@ high  = ask("Max effort", Float){|q| q.above = low}
 # Submit the task and estimate
 say "Submitting: '#{name}' [#{low} - #{high}] to LiquidPlanner"
 task = workspace.create_task(:name=>name, :parent_id => parent.id)
-task.create_estimate(:low=>low, :high=>high)
+task.create_estimate(:low=>low, :high=>high, :owner_id => account.id)
 
 # All done
 say "Added task"
