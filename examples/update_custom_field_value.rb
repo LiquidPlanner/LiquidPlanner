@@ -6,7 +6,6 @@ require 'rubygems'
 require 'highline/import'
 require File.expand_path("./support/helper", File.dirname(__FILE__))
 
-
 require 'pp'
 # Get the user's credentials
 email, password, space_id = get_credentials!
@@ -26,7 +25,7 @@ projects = workspace.projects(:all, :filter=>'owner_id = me')
 custom_task_fields    = workspace.custom_fields(:all).select{|item| item.category == "task"}
 custom_project_fields = workspace.custom_fields(:all).select{|item| item.category == "project"}
 
-if tasks.empty? && projects.empty?
+if tasks.length == 0 && projects.length == 0
   say "No tasks or projects are assigned to you."
   exit
 else

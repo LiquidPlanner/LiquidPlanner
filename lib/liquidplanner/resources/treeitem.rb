@@ -4,7 +4,6 @@
 module LiquidPlanner
   module Resources
     class Treeitem < WorkspaceResource 
-
       def parent
         parent_id && Treeitem.find( :one, :from => "/api/workspaces/#{workspace_id}/treeitems/#{parent_id}" )
       end
@@ -66,6 +65,10 @@ module LiquidPlanner
         prefix_options[:workspace_id]
       end
 
+      def as_json options = {}
+        super(options.merge(:except => :assignments))
+      end
+
       protected
       
       def build_new_resource(klass, attributes={})
@@ -81,7 +84,6 @@ module LiquidPlanner
           :item_id         => self.id
         }
       end
-
     end
   end
 end
