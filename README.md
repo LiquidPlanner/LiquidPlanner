@@ -96,7 +96,7 @@ end
 custom_field = workspace.custom_fields(:first) # Access the first custom field
 task = workspace.tasks(:first)                 # Access the first task
 
-task.custom_field_values = { custom_field.name => custom_field.values.first }
+task.custom_field_values = { custom_field.name => custom_field.values.first.label }
 task.save
 ```
 
